@@ -28,6 +28,7 @@ print("location of the cursor now: ", pyautogui.position())
 try:
     while True:
         x, y = pyautogui.position()
+        # print(x, y)
         rawdata = client_sock.recv(1024)
         if len(rawdata) == 0: break
         rawdata = rawdata.decode('UTF-8')
@@ -36,14 +37,18 @@ try:
             print(data)
             #print(data[0:2])
             if (data == "right"):
+                x, y = pyautogui.position()
                 pyautogui.moveTo(min(x+10, a), y, 0)
             if (data == "left"):
+                x, y = pyautogui.position()
                 pyautogui.moveTo(max(x-10, 0), y, 0)
             if (data[0:2] == "up"):
+                x, y = pyautogui.position()
                 #print(data)
                 pyautogui.moveTo(x, min(0, y-10), 0)
                 #break
             if (data[0:4] == "down"):
+                x, y = pyautogui.position()
                 pyautogui.moveTo(x, max(b, y+10), 0)
 
 # raise an exception if there was any error
