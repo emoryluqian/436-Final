@@ -38,18 +38,24 @@ try:
             #print(data[0:2])
             if (data == "right"):
                 x, y = pyautogui.position()
-                pyautogui.moveTo(min(x+10, a), y, 0)
+                pyautogui.press('right')
+                # pyautogui.moveTo(min(x+20, a), y, 0)
             if (data == "left"):
                 x, y = pyautogui.position()
-                pyautogui.moveTo(max(x-10, 0), y, 0)
+                pyautogui.press('left')
+                # pyautogui.moveTo(max(x-20, 0), y, 0)
             if (data[0:2] == "up"):
                 x, y = pyautogui.position()
                 #print(data)
-                pyautogui.moveTo(x, min(0, y-10), 0)
+                pyautogui.press('up')
+                # pyautogui.moveTo(x, max(0, y-20), 0)
                 #break
             if (data[0:4] == "down"):
                 x, y = pyautogui.position()
-                pyautogui.moveTo(x, max(b, y+10), 0)
+                pyautogui.press('down')
+                # pyautogui.moveTo(x, min(b, y+20), 0)
+            if (data == "enter"):
+                pyautogui.hotkey('enter')
 
 # raise an exception if there was any error
 except IOError:
@@ -58,4 +64,6 @@ except IOError:
 print("disconnected")
 
 client_sock.close()
-server_sock.close()
+server_sock.close(
+    
+)
