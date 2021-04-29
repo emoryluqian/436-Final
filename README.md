@@ -1,6 +1,4 @@
 # TEAM TENET Final Product
-### Product website: https://emoryluqian.github.io/436-Final/
-
+#### Product website: https://emoryluqian.github.io/436-Final/
 #### You might need to refresh the website and allow some processing time to display the most recent changes
-
-### The `index.html` is now moved to the `docs` file. 
+#### The `index.html` is now moved to the `docs` file. 
