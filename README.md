@@ -1,4 +1,5 @@
-### TEAM 3 TENET final product website: https://emoryluqian.github.io/436-Final/
+# TEAM TENET Final Product
+### Product website: https://emoryluqian.github.io/436-Final/
 
 #### You might need to refresh the website and allow some processing time to display the most recent changes
 
