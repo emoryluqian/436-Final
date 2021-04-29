@@ -23,6 +23,97 @@ body, html {
   min-height: 75%;
 }
 
+* {
+  box-sizing: border-box;
+}
+
+img {
+  vertical-align: middle;
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.container {
+  position: relative;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Container for image text */
+.caption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 2px 16px;
+  color: white;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 16.66%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
 </style>
 <body>
 
@@ -84,7 +175,7 @@ body, html {
     </p>
   </div>
 </div>
-
+<hr>
 <!-- milestones Container -->
 <div class="w3-container" id="milestones">
   <div class="w3-content" style="max-width:700px">
@@ -96,6 +187,7 @@ body, html {
     <p>Week 5 (4/19 - 4/25): Refine for final completion of the prototype and prepare report & presentation</p>
   </div>
 </div>
+<hr>
 
 <!-- descriptions Container -->
 <div class="w3-container" id="descriptions">
@@ -111,25 +203,74 @@ body, html {
     <p>... </p>
   </div>
 </div>
+<hr>
 
 <!-- photos Container -->
 <div class="w3-container" id="photos">
   <div class="w3-content" style="max-width:700px">
     <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">Photos</span></h5>
-    <p>Product Design: Top 
-    <img src="Top.jpg" style="width:100%;max-width:1000px" class="w3-margin-top">
-    </p>
+    
+    <!-- Slideshow Header -->
+    <p style="text-align:center"><b>Product Design</b></p>
+
+    <div class="container">
+      <div class="mySlides">
+        <div class="numbertext">1 / 5</div>
+        <img src="Top.jpg" style="width:100%">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext">2 / 5</div>
+        <img src="Buttom.jpg" style="width:100%">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext">3 / 5</div>
+        <img src="Side.jpg" style="width:100%">
+      </div>
+        
+      <div class="mySlides">
+        <div class="numbertext">4 / 5</div>
+        <img src="ButtonDesign.jpg" style="width:100%">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext">5 / 5</div>
+        <img src="ButtonDetail.jpg" style="width:100%">
+      </div>
+        
+      <a class="prev" onclick="plusSlides(-1)">❮</a>
+      <a class="next" onclick="plusSlides(1)">❯</a>
+
+      <div class="caption-container">
+        <p id="caption"></p>
+      </div>
+
+      <div class="row">
+        <div class="column">
+          <img class="demo cursor" src="Top.jpg" style="width:100%" onclick="currentSlide(1)" alt="Top">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="Buttom.jpg" style="width:100%" onclick="currentSlide(2)" alt="Buttom">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="Side.jpg" style="width:100%" onclick="currentSlide(3)" alt="Side">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="ButtonDesign.jpg" style="width:100%" onclick="currentSlide(4)" alt="Side-Button Design">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="ButtonDetail.jpg" style="width:100%" onclick="currentSlide(5)" alt="ButtonDetail">
+        </div>    
+      </div>
+    </div>
      
     <p>Photo 2 title </p>
-    <p> (Insert image here.) </p>
-     
-    <p>Photo 3 title </p>
-    <p> (Insert image here.) </p>
-     
-    <p>... </p>
+    <p> (Insert image here.) </p>     
+   
   </div>
 </div>
-
+<hr>
 
 <!-- contribution Container -->
 <div class="w3-container" id="contribution">
@@ -140,7 +281,7 @@ body, html {
     <p>Video editing, Directing</p>
     <br>
     <p><b>Zhengnan Huang </b></p>
-    <p>Design and build the first generation case, ...</p>
+    <p>Design and build first generation case, ...</p>
     <br>
     <p><b><a href="https://www.linkedin.com/in/intao/">Yingtao Jiang</a>, Computer Engineering</b></p>
     <p>Chief Engineer, Video Editing, Designer</p>
@@ -154,6 +295,40 @@ body, html {
     <p> Names are listed in alphabetical order.</p>
   </div>
 </div>
+
+<script>
+// slide show function
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+
+
 
 </body>
 </html>
